@@ -80,7 +80,7 @@
       {
         "name": "ImageMagick License",
         "id": "ImageMagick",
-        "url": "https://spdx.org/licenses/ImageMagick.html)"
+        "url": "https://spdx.org/licenses/ImageMagick.html"
       },
       {
         "name": "ISC License",
@@ -624,17 +624,17 @@
       },
       {
         "id": "Artistic-1.0",
-        "url": "https://spdx.org/licenses/Artistic-1.0.html)",
+        "url": "https://spdx.org/licenses/Artistic-1.0.html",
         "name": "Artistic License 1.0"
       },
       {
         "id": "Artistic-1.0-cl8",
-        "url": "https://spdx.org/licenses/Artistic-1.0-cl8.html)",
+        "url": "https://spdx.org/licenses/Artistic-1.0-cl8.html",
         "name": "Artistic License 1.0 w/clause 8"
       },
       {
         "id": "Artistic-1.0-Perl",
-        "url": "https://spdx.org/licenses/Artistic-1.0-Perl.html)",
+        "url": "https://spdx.org/licenses/Artistic-1.0-Perl.html",
         "name": "Artistic License 1.0 (Perl)"
       },
       {
