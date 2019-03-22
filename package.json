@@ -10,5 +10,11 @@
     "index.json",
     "README.md",
     "LICENSE"
-  ]
+  ],
+  "devDependencies": {
+    "json": "^9.0.6"
+  },
+  "scripts": {
+    "prepublish": "curl https://blueoakcouncil.org/list.json | json ratings > index.json"
+  }
 }
