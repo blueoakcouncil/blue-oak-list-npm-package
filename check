@@ -1,0 +1,19 @@
+#!/bin/sh
+set -e
+
+json=node_modules/.bin/json
+if ! [ -x "$json" ]; then
+  npm install
+fi
+
+current_version=$(curl "https://blueoakcouncil.org/list.json" | $json version)
+echo "Current version on blueoakcouncil.org is $current_version."
+
+tag="v$current_version.0.0"
+if git rev-parse "$tag" >/dev/null 2>&1; then
+  echo "Have $tag tag."
+  exit 0
+else
+  echo "No $tag tag."
+  exit 1
+fi

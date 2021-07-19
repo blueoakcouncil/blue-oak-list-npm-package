@@ -1,0 +1,14 @@
+---
+name: "Check Against Latest List"
+on:
+  workflow_dispatch:
+    inputs: {}
+  schedule:
+    - cron: '0 0 */7 * *' # every seven days
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+      - run: ./check
