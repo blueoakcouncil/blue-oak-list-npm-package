@@ -1,0 +1,22 @@
+#!/bin/sh
+set -e
+
+json=node_modules/.bin/json
+if ! [ -x "$json" ]; then
+  npm install
+fi
+
+tmp="$(mktemp)"
+remove_tmp () {
+  rm -f "$tmp"
+}
+trap remove_tmp EXIT
+curl -s "https://blueoakcouncil.org/list.json" > "$tmp"
+
+version=$($json version < "$tmp")
+semver="$version.0.0"
+echo "Version $semver"
+npm version "$semver"
+git push --follow-tags
+$json ratings < "$tmp" > index.json
+npm publish
