@@ -3,7 +3,7 @@ set -e
 
 json=node_modules/.bin/json
 if ! [ -x "$json" ]; then
-  npm install
+  npm install --silent
 fi
 
 current_version=$(curl -s "https://blueoakcouncil.org/list.json" | $json version)
