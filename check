@@ -6,7 +6,7 @@ if ! [ -x "$json" ]; then
   npm install
 fi
 
-current_version=$(curl "https://blueoakcouncil.org/list.json" | $json version)
+current_version=$(curl -s "https://blueoakcouncil.org/list.json" | $json version)
 echo "Current version on blueoakcouncil.org is $current_version."
 
 tag="v$current_version.0.0"
