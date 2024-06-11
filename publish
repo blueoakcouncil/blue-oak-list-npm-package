@@ -1,6 +1,8 @@
 #!/bin/sh
 set -e
 
+otp="$1"
+
 json=node_modules/.bin/json
 if ! [ -x "$json" ]; then
   npm install --silent
@@ -19,4 +21,8 @@ echo "Version $semver"
 npm version "$semver"
 git push --follow-tags
 $json ratings < "$tmp" > index.json
-npm publish
+if test -n "$otp"; then
+  npm publish --otp="$otp"
+else
+  npm publish
+fi
